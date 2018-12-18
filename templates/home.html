@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title> Category Home </title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class='container'>
+
+    <div class='header'>
+        <h1>Catalog App</h1>
+    </div>
+
+    <!--MESSAGE FLASHING EXAMPLE -->
+    <div class='message'>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+        <li><strong>{{message}}</strong></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+    </div>
+
+    <div class='content'>
+
+        <div class= 'nav'>
+            <h3>Categories</h3>
+            {% for i in categories %}
+            <p><a class ='navtext' href= '{{url_for('categoryList',category_id=i.id)}}'>{{i.name}}</a></p>
+            {% endfor %}
+        </div>
+
+        <div class='main'>
+                <div class='actiontop'>
+                        <a href = '{{url_for('newItem')}}'>
+                             Create New Item</a>
+                         
+                 </div>
+            <h3>Items</h3>
+            {% for i in items %}
+            <div class='mainoutput'>
+                    <span class='suboutput1'>
+                        <p>{{i.name}}
+                    </span>
+                    <span class='suboutput2'>
+                        ({{i.category.name}})
+                    </span>
+                    </p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class='footer'>
+        <p>Udacity Full Stack Developer Nanodegree - Tu Duong</p>
+    </div>
+</div>
+
+</body>
+
+</html>

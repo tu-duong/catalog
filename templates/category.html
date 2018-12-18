@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title> Category List </title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class='container'>
+
+    <div class='header'>
+        <h1>Catalog App</h1>
+    </div>
+
+    <!--MESSAGE FLASHING EXAMPLE -->
+    <div class='message'>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+        <li><strong>{{message}}</strong></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+    </div>
+
+    <div class='content'>
+
+        <div class= 'nav'>
+            <h3>Categories</h3>
+            {% for i in categories %}
+            <p><a class ='navtext' href= '{{url_for('categoryList',category_id=i.id)}}'>{{i.name}}</a></p>
+            {% endfor %}
+        </div>
+
+        <div class='main'>
+            <h3>{{category.name}} ({{itemcount}} items)</h3>
+
+        
+            {% for i in items %}
+            <div class='mainoutput'>
+                <p></p>    
+                <a href= '{{url_for('itemList',category_id=i.category_id, item_id=i.id)}}'><strong>{{i.name}}</strong></a>
+                <p></p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class='footer'>
+        <p>Udacity Full Stack Developer Nanodegree - Tu Duong</p>
+    </div>
+</div>
+
+</body>
+
+</html>

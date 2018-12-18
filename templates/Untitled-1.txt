@@ -1,0 +1,34 @@
+        <div class='container'>
+        
+            <div class='header'>
+
+            </div>
+        
+            <div class='message'>
+        
+            </div>
+        
+            <div class='content'>
+        
+                <div class= 'nav'>
+                    List categories here
+                </div>
+        
+                <div class='main'>
+                    <div class='actiontop'>
+
+                    </div>
+                    <div class='mainoutput'>
+
+                    </div>
+                    <div class='actionbottom'>
+                    
+                    </div>                    
+        
+                </div>
+            </div>
+        
+            <div class='footer'>
+                <p>Udacity Full Stack Developer Nanodegree - Tu Duong</p>
+            </div>
+        </div>

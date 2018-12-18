@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title> Item Details </title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class='container'>
+
+    <div class='header'>
+        <h1>Catalog App</h1>
+    </div>
+
+    <!--MESSAGE FLASHING EXAMPLE -->
+    <div class='message'>
+    </div>
+
+    <div class='content'>
+
+        <div class= 'nav'>
+        </div>
+
+        <div class='main'>
+            <h1>{{item.name}}</h1>
+
+            <div class='mainoutput'>
+                    <p>{{item.description}}</p>
+                    <p></p>
+            </div>
+            <div class='actionbottom'>
+
+                <a href= '{{url_for('editItem',category_id=item.category_id, item_id=item.id)}}'>Edit</a>
+                
+                <a href= '{{url_for('deleteItem',category_id=item.category_id, item_id=item.id)}}'>Delete</a>
+            
+            </div>                    
+            
+
+        </div>
+    </div>
+
+    <div class='footer'>
+        <p>Udacity Full Stack Developer Nanodegree - Tu Duong</p>
+    </div>
+</div>
+
+</body>
+
+</html>

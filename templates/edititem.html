@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title> Edit an item </title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+            
+<body>
+
+    <div class='container'>
+    
+            <div class='header'>
+                    <h1> Edit Item </h1>
+            </div>
+        
+            <div class='message'>
+        
+            </div>
+        
+            <div class='content'>
+        
+                <div class= 'nav'>
+                    List categories here
+                </div>
+        
+                <div class='main'>
+                    <div class='actiontop'>
+
+                    </div>
+                    <div class='mainoutput'>
+                        <form action="{{url_for('editItem',item_id=item.id)}}" method = 'POST'>
+
+                            <p>Name:</p>
+                            
+                            <input type='text' size='80' name='name' value='{{item.name}}'>
+                            
+                            <p>Description:</p>
+                            
+                            <input type='text' size='80' name='description'value='{{item.description}}'>
+                            
+                            <p>Category:</p>
+                            
+                            <select name='new_category'>
+                                {% for i in categories %}
+                                <option value='{{i.id}}'>'{{i.name}}</option>
+                                {% endfor %}
+                            </select>
+                            
+                            <br>
+                            <br>
+
+                            <input type='submit' value='Submit'>
+                            
+                            </form>
+                            
+                            <a href= '{{url_for('categoryList',category_id=item.category_id)}}'>Cancel</a>
+                    </div>
+                    <div class='actionbottom'>
+                    
+                    </div>                    
+        
+                </div>
+            </div>
+        
+            <div class='footer'>
+                <p>Udacity Full Stack Developer Nanodegree - Tu Duong</p>
+            </div>
+        </div>
+</body>
+</html>
