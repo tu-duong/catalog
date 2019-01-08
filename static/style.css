@@ -8,10 +8,10 @@ a {
     }
 
 a:link{
-    color:#644436;
+    color:#fa5457;
     }
     a:visited{
-    color:#644436;
+    color:#fa5457;
     }
     a:hover{
     color:red;
@@ -28,7 +28,7 @@ a:link{
 }
 
 .header{
-    background-color: #274257;
+    background-color: #01b4bc;
     color: white;
     text-align: center;
     padding: 10px;
@@ -50,7 +50,7 @@ a:link{
 .nav{
     width: 180px;
     padding: 10px;
-    background-color: #DFC184
+    background-color: #5fa55a
 
 }
 
@@ -62,18 +62,18 @@ a:link{
 .footer{
     clear: both;
     padding: 10px;
-    background-color: #274257;
+    background-color: #01b4bc;
     color: white;
     text-align: left;
 }
 
 .main .actiontop{
-    background-color: #7EB5D6;
+    background-color: #f6d51f;
     padding: 10px;
 }
 
 .main .actionbottom{
-    background-color: 7EB5D6;
+    background-color: f6d51f;
     padding: 10px;
 }
 .main .mainoutput{

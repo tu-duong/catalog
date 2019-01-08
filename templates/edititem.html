@@ -9,7 +9,9 @@
     <div class='container'>
     
             <div class='header'>
-                    <h1> Edit Item </h1>
+                    <h1><a href="/">Catalog App</a></h1>
+                    <div class="logout_button"><a href="/gdisconnect">Log out</a></div>
+
             </div>
         
             <div class='message'>
@@ -18,16 +20,11 @@
         
             <div class='content'>
         
-                <div class= 'nav'>
-                    List categories here
-                </div>
         
                 <div class='main'>
-                    <div class='actiontop'>
-
-                    </div>
+                    <h3> Edit Item </h3>
                     <div class='mainoutput'>
-                        <form action="{{url_for('editItem',item_id=item.id)}}" method = 'POST'>
+                        <form action="{{url_for('editItem',item_name=item.name)}}" method = 'POST'>
 
                             <p>Name:</p>
                             
@@ -52,11 +49,8 @@
                             
                             </form>
                             
-                            <a href= '{{url_for('categoryList',category_id=item.category_id)}}'>Cancel</a>
+                            <a href= '{{url_for('categoryList',category_name=item.category.name)}}'>Cancel</a>
                     </div>
-                    <div class='actionbottom'>
-                    
-                    </div>                    
         
                 </div>
             </div>

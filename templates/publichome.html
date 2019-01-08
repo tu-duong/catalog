@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title> Category List </title>
+    <title> Category Home </title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -11,19 +11,8 @@
 
     <div class='header'>
         <h1><a href="/">Catalog App</a></h1>
+        <div class="login_button"><a href="/login">Log in</a></div>
         
-        {% if isloggedin == 0 %}
-			<div class="login_button"><a href="/login">Log in</a>
-
-            </div>
-		{% endif %}
-
-        {% if isloggedin == 1 %}
-            <div class="logout_button"><a href="/gdisconnect">Log out</a>
-
-            </div>
-		{% endif %}
-
     </div>
 
     <!--MESSAGE FLASHING EXAMPLE -->
@@ -52,15 +41,18 @@
         </div>
 
         <div class='main'>
-            <h3>{{category.name}} ({{itemcount}} items)</h3>
-
-        
+            <h3>Latest Items</h3>
             {% for i in items %}
             <div class='mainoutput'>
-                <p></p>    
-                <a href= '{{url_for('itemList',category_name=i.category.name, item_name=i.name)}}'><strong>{{i.name}}</strong></a>
-                <p></p>
+                    <span class='suboutput1'>
+                        <p>{{i.name}}
+                    </span>
+                    <span class='suboutput2'>
+                        ({{i.category.name}})
+                    </span>
+                    </p>
             </div>
+
             {% endfor %}
 
         </div>

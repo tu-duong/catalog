@@ -11,7 +11,18 @@
 
     <div class='header'>
         <h1><a href="/">Catalog App</a></h1>
-        <div class="logout_button"><a href="/gdisconnect">Log out</a></div>
+
+        {% if isloggedin == 0 %}
+			<div class="login_button"><a href="/login">Log in</a>
+
+            </div>
+		{% endif %}
+
+        {% if isloggedin == 1 %}
+            <div class="logout_button"><a href="/gdisconnect">Log out</a>
+
+            </div>
+		{% endif %}
         
     </div>
 
@@ -28,14 +39,6 @@
                     <p>{{item.description}}</p>
                     <p></p>
             </div>
-            <div class='actionbottom'>
-
-                <a href= '{{url_for('editItem',category_name=item.category.name, item_name=item.name)}}'>Edit</a>
-                
-                <a href= '{{url_for('deleteItem',category_name=item.category.name, item_name=item.name)}}'>Delete</a>
-            
-            </div>                    
-            
 
         </div>
     </div>

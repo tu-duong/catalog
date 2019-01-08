@@ -11,23 +11,18 @@
         
                 <div class='header'>
                         <h1> Catalog App </h1>
+                        <div class="logout_button"><a href="/gdisconnect">Log out</a></div>
+
                 </div>
             
             
                 <div class='content'>
             
-                    <div class= 'nav'>
+
+                    <div class='main'>
                         <h3>New item</h3>
 
-                    </div>
-            
-                    <div class='main'>
-                        <div class='actiontop'>
-    
-
-                        </div>
                         <div class='mainoutput'>
-                                <h3>New Item</h3>
                                 <form action="{{url_for('newItem')}}" method = 'POST'>
 
                                         <p>Name:</p>
@@ -54,10 +49,6 @@
                                     </form>
     
                         </div>
-                        <div class='actionbottom'>
-                        
-
-                        </div>                    
             
                     </div>
                 </div>
